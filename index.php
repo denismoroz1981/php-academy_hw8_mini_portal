@@ -26,11 +26,11 @@ ob_start();
 
 switch ($page)
 {
-    case 'about':
-        $title = 'About us';
-        $h1 = 'About us page #1 title';
+    case 'gallery':
+        $title = 'Gallery';
+        $h1 = 'Gallery page #1 title';
 
-        include_once 'template' . DIRECTORY_SEPARATOR . 'about.php';
+        include_once 'template' . DIRECTORY_SEPARATOR . 'gallery.php';
         break;
     case 'contact':
         $title = 'Contact us';
