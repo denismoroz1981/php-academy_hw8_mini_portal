@@ -30,16 +30,17 @@ function getTopNavigation()
     return $navHtml;
 }
 
-
+// TODO: подумать, как избавиться от лишней функции
 function getNewsFullList() {
-    require_once 'includes' . DIRECTORY_SEPARATOR . 'news_database.php';
-    $arrNews = getNewsDatabase();
-    return $arrNews;
+    return getNewsDetails();
 }
 
-function getNewsDetails($newsNum) {
-    require_once 'includes' . DIRECTORY_SEPARATOR . 'news_database.php';
-    $arrNews = getNewsDatabase();
-    return $arrNews[$newsNum];
-
+function getNewsDetails($newsNum = null) {
+    $arrNews = require_once 'includes' . DIRECTORY_SEPARATOR . 'news_database.php';
+    if (!empty($newsNum)) {
+        if (isset($arrNews[$newsNum])) {
+            return $arrNews[$newsNum];
+        }
+    }
+    return $arrNews;
 }
